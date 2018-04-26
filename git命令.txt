@@ -1,0 +1,28 @@
+﻿这是一个测试文本
+
+文本内容修改
+
+
+
+git init						初始化
+
+git status						查看状态，如果显示的中文乱码，可以执行 git config --global core.quotepath false
+
+git add "测试文本.txt"  
+或者  git add -A  （上传次目录下的所有文件）
+
+git commit -m "更新的信息"
+
+git log							提交成功后，查看日志
+
+
+
+
+
+
+git clone SSH地址					克隆项目
+
+
+
+
+git命令学习参考地址：https://blog.csdn.net/qazwsxpcm/article/details/68946736
