@@ -13,13 +13,11 @@ linux基础
 
 ### 与目录相关的命令
 
-/	根目录
+cd /	切换到根目录
 
-~	当前用户的主目录
+cd ..	切换到上一层目录
 
-..	当前目录的上一级
-
-.	代表当前目录
+cd 或者 cd ~        切换到当前用户的主目录下
 
 mkdir	创建目录 -p 补全所缺失的路径
 
@@ -63,9 +61,11 @@ ifconfig	查看或设置网络配置信息（ip addr centos7）
 
 ping 测试网络是否连通
 
-Linux默认会一直执行，需要用Ctrl+c退出。
+ping localhost                会一直ping下去，ctrl+c停止
 
-windows默认只执行4次，/t会一直执行。
+ping www.baidu.com
+
+ping -c N ip/网址                 其中N表示ping的次数
 
 ### 重定向
 ```
@@ -83,30 +83,6 @@ file filename  显示详细信息（编码、类型等）
 stat filename  查看更多信息（大小、atime、mtime、ctime等）
 
 Ctrl+Alt+F1 / F2	图形用户界面和shell页面切换
-
-date -R		查看系统时间
-
-查看版本位数
-
-uname -a
-
-getconf LONG_BIT
-
-file /sbin/init
-
-file /bin/ls
-
-uname -a	查看kernel的版本
-
-cat /etc/issue		查看linux的发行版本
-
-w
-
-who
-
-who am i
-
-pkill -kill -t tty1
 
 ### 修改密码
 
@@ -127,9 +103,36 @@ pkill -kill -t tty1
 ### 端口号、PID
 sudo netstat -antup			显示端口号、PID号
 
+netstat -na |grep 3360       查看端口是否被占用
+
 sudo netstat -antup |grep 端口号		根据端口号查询PID号 sudo netstat -antup |grep 3306
 
 sudo netstat -antup |grep PID号		根据PID号查询端口号 sudo netstat -antup |grep 2040
 
 sudo ps -ef |gref 进程名		根据进程名查看PID
 
+### 系统
+date -R		查看系统时间
+
+查看版本位数4种方法：
+
+1. uname -a
+2. getconf LONG_BIT
+3. file /sbin/init
+4. file /bin/ls
+
+uname -a	查看kernel的版本
+
+cat /etc/issue		查看linux的发行版本
+
+w
+
+who
+
+who am i
+
+pkill -kill -t tty1
+
+shutdown -h now            关闭系统
+
+shutdown -r now             重启
