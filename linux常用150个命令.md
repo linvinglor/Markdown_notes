@@ -1,5 +1,7 @@
 # linux常用150个命令
 
+> PS:以下只是列出来常用命令，具体用法可以百度
+
 ### 线上查询及帮助命令（1 个）
 help
 
@@ -30,8 +32,6 @@ telnet ssh scp wget ping route ifconfig ifup ifdown netstat
 
 ### 深入网络操作命令（6 个）
  lsof route mail mutt nslookup dig
-
-##### PS:以上这些命令是一个精简版，如果不知道具体用法，可以自行百度，如上只是帮大家做筛选整理；
 
 ### 有关磁盘文件系统的命令（8 个）
 mount umount df du fsck dd dumpe2fs dump
