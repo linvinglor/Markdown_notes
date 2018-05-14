@@ -26,9 +26,30 @@ sudo ps -ef |gref 进程名		        根据进程名查看PID
 shift + PaUp                           向前翻页
 
 shift + PaDn                           向后翻页
+
+killall mysqld                     杀掉所有以mysqld命名的进程。
 ```
 
-### 与目录相关的命令
+### 用户
+```
+w - Show who is logged on and what they are doing.
+
+who - show who is logged on
+
+whoami - print effective userid
+
+who am i - When a user logs in as a root across the network, both the command
+
+whoami and who am i will show you root. However, when a user abc logs in remotely and runs su – root, whoami will show root whereas who am i will show abc
+
+pkill -kill -t tty1        kill登录的用户
+
+sudo                输入当前管理员用户的密码就可以获得超级用户权限，默认5分钟后root权限失效
+
+su                  输入root权限就切换到root用户
+```
+
+### 目录常用命令
 
 ```linux
 cd /	切换到根目录
@@ -52,7 +73,7 @@ chmod -R	以递归的方式
 PS：目录就是特殊的文件，操作文件的命令也可以用来操作目录，只是需要加些额外的参数。目录文件只能创建软链接。
 ```
 
-### 文件相关命令
+### 文件常用命令
 ```linux
 touch	创建文件
 
@@ -77,6 +98,16 @@ ln 		创建链接文件硬链接
 
 硬链接：硬链接链接的是文件的内容，所以即使目标文件删除，链接文件也可以访问。
 
+### head 和 tail：（head、tail分别用来查看文件的开头和结尾）
+```
+head -3 test.log        //查看文件的前3行
+
+tail -3 test.log            //查看文件的最后3行
+
+tail -f text.log            //把文件最尾部的内容显示在屏幕上，并不断刷新，使你看到最新的文件内容（常用来查看服务器上的日志文件）
+
+head -20 text.log | tail -10        //查看文件的第11行到第20行
+```
 
 ### 网络相关命令
 ```
@@ -95,64 +126,4 @@ ping -c N ip/网址		其中N表示ping的次数
 ```
 > 以清空方式创建一个新文件来存储
 >> 以追加方式定入，在原来的基础上添加。
-```
-
-### 其他命令
-```
-clear	清屏
-
-pwd	(print working directory)	显示当前所在的路径
-
-file filename  显示详细信息（编码、类型等）
-
-stat filename  查看更多信息（大小、atime、mtime、ctime等）
-
-Ctrl+Alt+F1 / F2	图形用户界面和shell页面切换
-```
-
-### 修改密码
-
-```
-1、修改root用户密码：
-
-# passwd     然后输入两次新密码即可
-
-2、修改用户oracle的密码：
-
-# passwd oracle    然后输入两次新密码即可
-```
-
-### 系统
-
-查看版本位数4种方法：
-
-1. uname -a
-2. getconf LONG_BIT
-3. file /sbin/init
-4. file /bin/ls
-
-```
-date -R			查看系统时间
-
-uname -a			查看kernel的版本
-
-cat /etc/issue		查看linux的发行版本
-
-shutdown -h now            关闭系统
-
-shutdown -r now             重启
-```
-
-```
-w - Show who is logged on and what they are doing.
-
-who - show who is logged on
-
-whoami - print effective userid
-
-who am i - When a user logs in as a root across the network, both the command
-
-whoami and who am i will show you root. However, when a user abc logs in remotely and runs su – root, whoami will show root whereas who am i will show abc
-
-pkill -kill -t tty1        kill登录的用户
 ```
