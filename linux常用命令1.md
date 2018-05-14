@@ -11,6 +11,14 @@ linux常用命令1
 
 # 常用命令
 
+### 查看端口号是否被占用，杀死进程
+```
+netstat -antup | grep 3306      可以查询到PID
+
+kill -9 PID             根据查询到的PID杀死进程
+```
+kill和kill -9都可以杀死进程，但是kill可能不会立刻杀死进程（先进行释放内存等），kill -9能立刻顺利的杀死进程。
+
 ### 端口号、PID
 ```
 sudo netstat -antup			         显示端口号、PID号
