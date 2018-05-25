@@ -28,6 +28,13 @@ git commit -m '更新的信息'
 git push
 
 
+3、删除文件夹 abc，文件夹下的内容循环删除
+
+git rm -r abc
+
+git commit -m '更新的信息'
+
+git push
 
 
 
